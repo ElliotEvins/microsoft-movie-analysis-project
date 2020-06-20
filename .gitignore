@@ -149,3 +149,5 @@ config.py
 #ignore data
 CSV.*
 .csv.*
+.*
+!/.gitignore
