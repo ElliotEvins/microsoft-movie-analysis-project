@@ -145,3 +145,6 @@ Thumbs.db
 
 # config file
 config.py
+
+#ignore data
+CSV.*
