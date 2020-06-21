@@ -1,5 +1,3 @@
-# microsoft-movie-analysis-project
-
 # Introduction
 ## Executive Summary
 This report provides an analysis and evaluation of the current and prospective profitability of the original content development industry. Methods include investment and budget analysis, quantitative regression, and qualitative assessment. Other calculations include return on investment and genre popularity analysis. All calculations can be found in the associated notebooks. Results of data analyzed produce suggested schedules in projecting revenue and roi per a given production budget as well as a film genre distribution. 
@@ -35,7 +33,7 @@ Numpy version: 1.16.2
 # ETL - The Rise of Big Chungus
 This project begins with 9 datasets from 4 sources. After importing each dataset and cleaning the file names we found the following data structure:
 
-![title](../misc/df-1.png)
+![title](/misc/df-1.png)
 
 With so much overlapping information, our approach pivoted towards aggregating these tables into fewer entities that could be stripped down after exploratory analysis. Rather than creating a SQL database we opted to create a large CSV file we could call on for each question - we came to call this master csv “Big Chungus.” We began by merging the IMDB tables that contained a 1 to 1 relationship between the ‘tconst’ key used to identify specific films. Genre information and IMDB’s people key (‘nconst’) for writers and directors were entered as a long string regardless of number of entries. We split these strings into a list that could then be made into individual datum. We expand the table in a wide manner by assigning each genre type to a categorical variable with a value of 1 representing that genre’s association with a given film. Writers and directors are split between 3 new variables for each category with a given film’s primary directors and writers being listed by their tconst value in the order they were provided. Films with fewer than three writers or directors were given Nan values to the latter variables. 
 
@@ -43,7 +41,7 @@ With so much overlapping information, our approach pivoted towards aggregating t
 
 With the IMDB data applicable to this table successfully merged, we turned towards the other tables for monetary information. With more values and FOI in The Numbers’ database, we chose to merge this file with Big Chungus over the bom_movie_gross table. Without a tconst value in this table, we chose to use the film title as a means of looking up the IMDB key and removing duplicates before analysis. This inevitably results in some data loss but since we are providing information to one of the largest companies to have ever existed, we assume it is safe to filter duplicate values by the higher pB. We cleaned the movie titles by removing spaces, punctuation, capital letters and any other odd characters we could identify. From there we were able to apply the same cleaning method to the IMDB title database and merge almost 4000 of the data table’s movies with a corresponding tconst value. We also cleaned the monetary figures and normalized them to integers. We then merged this table with Big Chungus along with a similarly normalized tmdb table (with datetime formatting) to create the following data layout:*
 
-![title](../misc/df-3.png)
+![title](/misc/df-3.png)
 
 *Note that imdb.name.basics.csv and imdb.title.principals.csv were also merged.
 
@@ -54,27 +52,27 @@ This business isn’t for the faint of heart - if you want to succeed you first 
 
 From the primary data table (big_chungus.csv), we extract and clean the data we hoped would answer this question. These features of interest were 'tconst','primary_title', 'release_date', 'domestic_gross', 'worldwide_gross','production_budget'. Since domestic_gross, worldwide_gross, and production_budget contained the same amount of values and wielded the most relevance to the question being asked, we selected these three FOI as the basis for removing Nan values from Big Chungus. From here we explored the FOI and sought correlation. Because profitability is a factor in our process, we created new variables that described the net return on investment both domestically and worldwide [(wG - pB)/ pB)]. As one would expect, many of the fiscally related features yielded high correlation as it’s usually safe to assume that when a movie grosses well domestically, it can usually perform well worldwide. From looking at the scatter matrix, the relationship between pB and wG seemed worth diving into:
 
-![title](../misc/scatter-matrix.png)
+![title](/misc/scatter-matrix.png)
 
 ### What’s a Normal Budget?
 
 On closer examination of the gross figures, wG seems to encapsulate the dG so we chose to move forward with that figure alone. The vast majority of movies in this data were produced with pB less that 2 million dollars so we defined a “normal budget” as one that was at or below 150 million. A closer look also shows that all of the films with a pB over 150 million act as outliers when charted between wG and pB:
 
-![title](../misc/wG&pB.png)
+![title](/misc/wG&pB.png)
 
 Once normal pB were defined as less than 150 million, we were able to fit a regression line that could act as a model for Microsoft to use when projecting wG based on their pB. The line of best fit through the nearly 4,000 films used in this calculation showed a slope of 2.5, which tells Microsoft that for every dollar they invest up to $150 million in pB, they can expect a return of $2.50 in wG revenue. In pBs over 150 million, the pattern does not apply as effectively but a slope of 3.8 indicates that these movies typically return even more revenue (for an extended discussion of regression technique applied, see ### Quantified the Relationship). 
 
-![title](../misc/regress-budgets.png)
+![title](/misc/regress-budgets.png)
 
 ## If Microsoft Makes a Lot of Money, How Much Money Will It Make?
 
 With a defined relationship between pB and wG, we turn our focus to worldwide return on investment(ROI). With a large majority of films yielding a -1 to 1 return on investment, we chose this as a definition of normal ROI. With this cap on earnings and loss, we once again map out pB and wG but overlay ROI. An obvious pattern emerges that shows films with maximum ROI come from movies that maximize revenue generation compared to their pB. 
 
-![title](../misc/roi-spectrum.png)
+![title](/misc/roi-spectrum.png)
 
 The idea that max ROI comes from movies that make the most revenue in relation to their pB may seem obvious but establishing this foundation from the data allows us to quantify this prospect through a regression formula. By narrowing the field to profitable films we are able to instruct Microsoft on how much the company should expect in wG for any given pBin order to achieve a positive ROI. 
 
-![title](../misc/best-roi.png)
+![title](/misc/best-roi.png)
 
 This regression gives us a formula to calculate revenue goals for a given pB. As an example.
 If Microsoft plans to make a film with a $1,000,000 pB then:
@@ -104,7 +102,7 @@ X = predictor variable
 
 Assigning pop as the criterion variable and wG as the predictor variable, we found a significant linear relationship which we represented graphically as follows:
 
-![alt text](../misc/best-roi.png "linregress_bt_pop_and_wG_link")
+![alt text](/misc/best-roi.png "linregress_bt_pop_and_wG_link")
 
 This connection can be described in terms of the following measures:
 r = 0.53
@@ -118,7 +116,7 @@ We isolated all genres, wG, and pop. We cleaned worldwide gross by eliminating z
 ### Quantified the relationship
 We produced two correlation charts. The first shows wG’s correlation to each genre. The second shows pop’s correlation to each genre. These were then used to generate graphics to help intuit the relative correlative strength, both positive and negative, between features.
 
-![alt text](misc/gross_corr.png "corr_wG_genre_link")
+![alt text](/misc/gross_corr.png "corr_wG_genre_link")
 ![alt text](/misc/pop_corr.png "corr_pop_genre_link")
 ### Quantitative Guidance
 We standardized the correlations in both charts through the following equation:
@@ -131,20 +129,20 @@ pct = (corr + |min_n|) / rf, where
 
 While none of the correlations were particularly powerful on their own, by standardizing them to a share of a whole, we were able to then produce a percentage schedule. The percentage schedule can be used by stakeholders to inform budgetary decisions and evaluate investment distribution opportunities.
 
-![alt text](./misc/gross_cor_schedule.png "schedule_wG_genre")
-![alt text](https://github.com/ElliotEvins/microsoft-movie-analysis-project/misc/pop_corr_sched.png "schedule_pop_genre")
+![alt text](/misc/gross_cor_schedule.png "schedule_wG_genre")
+![alt text](/misc/pop_corr_sched.png "schedule_pop_genre")
 # Future Investigation
 Other patterns emerged from the data that, while unrelated to our primary results, may prove fruitful if given additional attention in future investigations.
 ## Seasonality
 We looked to see if there was any seasonality to movie release dates. That is, we sought to determine whether there was a relationship between time of year and release date. To do so, we converted release date to a day of the year (e.g. February 1 is 32) and counted the number of releases as grouped by each day. This gave us the following non-linear curve.
 
-![alt text](../misc/seasonality.png "seasonality")
+![alt text](/misc/seasonality.png "seasonality")
 
 As can be seen, there is a clear pattern with a modestly narrow confidence interval. However, we were unable to identify any connection to ROI. Further investigation is recommended.
 ## Directors and World Gross
 We also looked to see if there were patterns in people who worked on certain films. Specifically, we looked at directors and their relationship to wG. While typical directors are associated with films grossing 24 billion USD, top performing directors may be associated with films grossing as high as 1.1 trillion USD -- a difference of 2 orders of magnitude. 
 
-![alt text](../misc/director.png "directors_v_gross")
+![alt text](/misc/director.png "directors_v_gross")
 
 However, the term performer may be misleading because it’s possible that the success of films is independent from, or only mildly influenced by, directors or any other member of crew. Further investigation is recommended.
 # Recommendations
