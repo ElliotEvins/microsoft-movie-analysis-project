@@ -131,8 +131,8 @@ pct = (corr + |min_n|) / rf, where
 
 While none of the correlations were particularly powerful on their own, by standardizing them to a share of a whole, we were able to then produce a percentage schedule. The percentage schedule can be used by stakeholders to inform budgetary decisions and evaluate investment distribution opportunities.
 
-![alt text](../misc/gross_cor_schedule.png "schedule_wG_genre")
-![alt text](../misc/pop_corr_sched.png "schedule_pop_genre")
+![alt text](./misc/gross_cor_schedule.png "schedule_wG_genre")
+![alt text](https://github.com/ElliotEvins/microsoft-movie-analysis-project/misc/pop_corr_sched.png "schedule_pop_genre")
 # Future Investigation
 Other patterns emerged from the data that, while unrelated to our primary results, may prove fruitful if given additional attention in future investigations.
 ## Seasonality
