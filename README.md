@@ -118,8 +118,8 @@ We isolated all genres, wG, and pop. We cleaned worldwide gross by eliminating z
 ### Quantified the relationship
 We produced two correlation charts. The first shows wG’s correlation to each genre. The second shows pop’s correlation to each genre. These were then used to generate graphics to help intuit the relative correlative strength, both positive and negative, between features.
 
-![alt text](../misc/gross_corr.png "corr_wG_genre_link")
-![alt text](../misc/pop_corr.png "corr_pop_genre_link")
+![alt text](misc/gross_corr.png "corr_wG_genre_link")
+![alt text](/misc/pop_corr.png "corr_pop_genre_link")
 ### Quantitative Guidance
 We standardized the correlations in both charts through the following equation:
 
