@@ -173,12 +173,16 @@ While these figures are small differences from the original percentage schedule,
 # Future Investigation
 Other patterns emerged from the data that, while unrelated to our primary results, may prove fruitful if given additional attention in future investigations.
 ## Seasonality
+[Notebook Associated with this Section](https://github.com/ElliotEvins/microsoft-movie-analysis-project/blob/master/ipynb%20files/seasonality.ipynb)
+
 We looked to see if there was any seasonality to movie release dates. That is, we sought to determine whether there was a relationship between time of year and release date. To do so, we converted release date to a day of the year (e.g. February 1 is 32) and counted the number of releases as grouped by each day. This gave us the following non-linear curve.
 
 ![alt text](/misc/seasonality.png "seasonality")
 
 As can be seen, there is a clear pattern with a modestly narrow confidence interval. However, we were unable to identify any connection to ROI. Further investigation is recommended.
 ## Directors and World Gross
+[Notebook Associated with this Section](https://github.com/ElliotEvins/microsoft-movie-analysis-project/blob/master/ipynb%20files/directors.ipynb)
+
 We also looked to see if there were patterns in people who worked on certain films. Specifically, we looked at directors and their relationship to wG. While typical directors are associated with films grossing 24 billion USD, top performing directors may be associated with films grossing as high as 1.1 trillion USD -- a difference of 2 orders of magnitude. 
 
 ![alt text](/misc/director.png "directors_v_gross")
