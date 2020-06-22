@@ -139,7 +139,7 @@ pct = (corr + |min_n|) / rf, where
 
 While none of the correlations were particularly powerful on their own, by standardizing them to a share of a whole, we were able to then produce a percentage schedule. The percentage schedule can be used by stakeholders to inform budgetary decisions and evaluate investment distribution opportunities.
 
-![alt text](/misc/gross_cor_schedule.png "schedule_wG_genre")
+![alt text](/misc/gross_corr_schedule.png "schedule_wG_genre")
 ![alt text](/misc/pop_corr_sched.png "schedule_pop_genre")
 
 # Inflation Turns Out to be Thin Air
