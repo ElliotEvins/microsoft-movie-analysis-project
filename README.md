@@ -26,11 +26,11 @@ The report also investigates the fact that the analysis conducted has limitation
 * [Conclusions](#conclusion)
 
 #### Terms
-FoI: feature of interest<br>
-pop: popularity<br>
-dG: domestic gross revenue<br>
-wG: worldwide gross revenue<br>
-pB: production budget<br>
+- **FoI:** feature of interest
+- **pop:** popularity
+- **dG:** domestic gross revenue
+- **wG:** worldwide gross revenue
+- **pB:** production budget
 
 ## Technologies 
 This project was created using the following languages and libraries. An environment with the correct versions of the following libraries will allow re-production and improvement on this project.
