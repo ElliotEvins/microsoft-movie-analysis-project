@@ -15,10 +15,13 @@ The report also investigates the fact that the analysis conducted has limitation
 - Further analysis could utilize additional resources in order to identify additional content development strategies.
 
 ## Table of Contents
-* [ETL - The Rise of Big Chungus](# ETL - The Rise of Big Chungus)
+* [ETL - The Rise of Big Chungus](#etl---the-rise-of-big-chungus)
 * [Technologies](#technologies)
-* [Insights and Business Recommendations](#insights-and-business-recommendations)
-* [Further Studies](#further-studies)
+* [Follow the Money](#follow-the-money)
+* [Popularity, Revenue, and Genre Guidance](#popularity-revenue-and-genre-provide-guidance)
+* [Future Investigation](#future-investigation)
+* [Recommendations](#recommendations)
+* [Conclusions](#conclusion)
 
 #### Terms
 FoI: feature of interest
