@@ -26,11 +26,11 @@ The report also investigates the fact that the analysis conducted has limitation
 * [Conclusions](#conclusion)
 
 #### Terms
-FoI: feature of interest<br>
-pop: popularity<br>
-dG: domestic gross revenue<br>
-wG: worldwide gross revenue<br>
-pB: production budget<br>
+- **FoI:** feature of interest
+- **pop:** popularity
+- **dG:** domestic gross revenue
+- **wG:** worldwide gross revenue
+- **pB:** production budget
 
 ## Technologies 
 This project was created using the following languages and libraries. An environment with the correct versions of the following libraries will allow re-production and improvement on this project.
@@ -70,7 +70,7 @@ On closer examination of the gross figures, wG seems to encapsulate the dG so we
 
 ![title](/misc/wG&pB.png)
 
-Once normal pB were defined as less than 150 million, we were able to fit a regression line that could act as a model for Microsoft to use when projecting wG based on their pB. The line of best fit through the nearly 4,000 films used in this calculation showed a slope of 2.5, which tells Microsoft that for every dollar they invest up to $150 million in pB, they can expect a return of $2.50 in wG revenue. In pBs over 150 million, the pattern does not apply as effectively but a slope of 3.8 indicates that these movies typically return even more revenue (for an extended discussion of regression technique applied, see ### Quantified the Relationship). 
+Once normal pB were defined as less than 150 million, we were able to fit a regression line that could act as a model for Microsoft to use when projecting wG based on their pB. The line of best fit through the nearly 4,000 films used in this calculation showed a slope of 2.5, which tells Microsoft that for every dollar they invest up to $150 million in pB, they can expect a return of $2.50 in wG revenue. In pBs over 150 million, the pattern does not apply as effectively but a slope of 3.8 indicates that these movies typically return even more revenue (for an extended discussion of regression technique applied, see [Quantified the Relationship](###quantified-the-relationship). 
 
 ![title](/misc/regress-budgets.png)
 
@@ -139,7 +139,7 @@ pct = (corr + |min_n|) / rf, where
 
 While none of the correlations were particularly powerful on their own, by standardizing them to a share of a whole, we were able to then produce a percentage schedule. The percentage schedule can be used by stakeholders to inform budgetary decisions and evaluate investment distribution opportunities.
 
-![alt text](/misc/gross_cor_schedule.png "schedule_wG_genre")
+![alt text](/misc/gross_corr_schedule.png "schedule_wG_genre")
 ![alt text](/misc/pop_corr_sched.png "schedule_pop_genre")
 
 # Inflation Turns Out to be Thin Air
