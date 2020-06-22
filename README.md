@@ -15,6 +15,10 @@ The report also investigates the fact that the analysis conducted has limitation
 - Further analysis could utilize additional resources in order to identify additional content development strategies.
 
 ## Table of Contents
+* [ETL - The Rise of Big Chungus](# ETL - The Rise of Big Chungus)
+* [Technologies](#technologies)
+* [Insights and Business Recommendations](#insights-and-business-recommendations)
+* [Further Studies](#further-studies)
 
 #### Terms
 FoI: feature of interest
@@ -22,6 +26,7 @@ pop: popularity
 dG: domestic gross revenue
 wG: worldwide gross revenue
 pB: production budget
+
 ## Technologies 
 This project was created using the following languages and libraries. An environment with the correct versions of the following libraries will allow re-production and improvement on this project.
 Python version: 3.6.9
