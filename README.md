@@ -70,7 +70,7 @@ On closer examination of the gross figures, wG seems to encapsulate the dG so we
 
 ![title](/misc/wG&pB.png)
 
-Once normal pB were defined as less than 150 million, we were able to fit a regression line that could act as a model for Microsoft to use when projecting wG based on their pB. The line of best fit through the nearly 4,000 films used in this calculation showed a slope of 2.5, which tells Microsoft that for every dollar they invest up to $150 million in pB, they can expect a return of $2.50 in wG revenue. In pBs over 150 million, the pattern does not apply as effectively but a slope of 3.8 indicates that these movies typically return even more revenue (for an extended discussion of regression technique applied, see ### Quantified the Relationship). 
+Once normal pB were defined as less than 150 million, we were able to fit a regression line that could act as a model for Microsoft to use when projecting wG based on their pB. The line of best fit through the nearly 4,000 films used in this calculation showed a slope of 2.5, which tells Microsoft that for every dollar they invest up to $150 million in pB, they can expect a return of $2.50 in wG revenue. In pBs over 150 million, the pattern does not apply as effectively but a slope of 3.8 indicates that these movies typically return even more revenue (for an extended discussion of regression technique applied, see [Quantified the Relationship](###quantified-the-relationship). 
 
 ![title](/misc/regress-budgets.png)
 
