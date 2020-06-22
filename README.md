@@ -7,7 +7,8 @@ The report finds that prospects of Microsoft in the film industry will require s
 Recommendations discussed include:
 - Investing in production budget and maximizing revenue generation in order to garner popularity and a profitable return on investment. 
 - Distributing content production among the identified genre ratios depending on whether popularity or revenue generation is more valuable to the firm.
-- etc...
+- How to percieve nominal vs. real figures in looking at previous productions in making decisions for the fututre.
+- Seasonality and individual director/writer considerations.
 
 The report also investigates the fact that the analysis conducted has limitations. Some of the limitations include:
 - Monetary figures are not nominalized, giving extra weight to more recent films. 
@@ -19,6 +20,7 @@ The report also investigates the fact that the analysis conducted has limitation
 * [Technologies](#technologies)
 * [Follow the Money](#follow-the-money)
 * [Popularity, Revenue, and Genre Guidance](#popularity-revenue-and-genre-provide-guidance)
+* [Inflation Turns Out to be Thin Air](#inflation-turns-out-to-be-thin-air)
 * [Future Investigation](#future-investigation)
 * [Recommendations](#recommendations)
 * [Conclusions](#conclusion)
@@ -139,6 +141,35 @@ While none of the correlations were particularly powerful on their own, by stand
 
 ![alt text](/misc/gross_cor_schedule.png "schedule_wG_genre")
 ![alt text](/misc/pop_corr_sched.png "schedule_pop_genre")
+
+# Inflation Turns Out to be Thin Air
+## If We’re Talking About Money, Should we Talk About REAL Money?
+
+[In this notebook](https://github.com/ElliotEvins/microsoft-movie-analysis-project/blob/master/ipynb%20files/q3-elliot-inflation.ipynb) we explore the validity of our previous suggestions by reassessing the methods used through the lens of inflation adjustment. More background on this approach is available in the associated [blog post.](https://medium.com/@elliotwevins)
+
+There is an asterisk associated with any fiscal discussion in the production of movies and that’s an ongoing debate over how figures should be calculated over time. Through the consumer price index, economists have ways of translating exactly how much a dollar was worth during x time period compared to what it is worth at y. Studio obfuscation and plain difficulty in gathering accurate information have also made production budgets and revenue generation difficult figures to confirm. With this in mind, we wanted to check our previous recommendations against real figures rather than the nominal information provided by The Numbers database. 
+
+Once again calling on Big Chungus, we clean the data in the same way as [Follow the Money](#follow-the-money) and extract the year from the release date column. We use Python’s [CPI module](https://github.com/datadesk/cpi) to convert budget and gross figures to inflation adjusted dollars. This module’s latest update is in line with the October, 2018 CPI so the 56 films in the database made after the release of those figures were reverted to that benchmark. Through our previous investigation we immediately see that this consolidates the gross revenue figures with the exception of a few outliers but budget remains largely unchanged along the x axis. Instead of 150 million acting as a natural cutoff in these figures, the condensed nature makes 100 million real dollar budgets a natural floor and ceiling to investigate. 
+
+![title](/misc/inflation-adjusted-eda.png)
+
+Running the same regression analysis for the best fitting line on the much flatter inflation adjusted figures beneath 100 million yields little results with an r-value of 0.23. On the other hand, inflation adjusted movies with budgets over 100 million gained statistical significance and income projection. 
+
+![title](/misc/inflation-regression.png)
+
+With the lack of statistical significance in the majority of films after budgets and revenue were adjusted for inflation, it stands to reason that our original model will ultimately serve Microsoft with more accurate working projections. With these adjusted figures, we can also revisit our discussion of genre to see how the percent schedule is affected when figures are adjusted for inflation.
+
+## Inflation Adjusted Genre
+
+Running an identical investigation into the correlation of revenue figures and genre classification, we see a slight decrease in most of the categories but nothing too shocking. Much of the order remains the same but the scale of positive correlation cuts back significantly as ‘Adventure’ drops from near .40 to .24. To better understand this change we create another percentage schedule based on the real figures, subtract the old percentages and graph the delta here. As the graph shows, we learn more about which genres are less successful from these figures:
+
+![title](/misc/real-genre-correlation.png)
+
+While these figures are small differences from the original percentage schedule, they are included in the following visualizations for the consideration of Microsoft though the original schedule is still recommended. Beyond the lack of statistical strength found in the inflation adjusted figures, it stands to reason that the original intent of this investigation was to look at the content that is going to return revenue/garner popularity in this day and age. In this sense the natural weight that inflation gives to more recently released films can be seen as a means of increased accuracy in the formation of our previous models and recommendations. 
+
+![title](/misc/percentage-schedule-adjustment.png)
+
+
 # Future Investigation
 Other patterns emerged from the data that, while unrelated to our primary results, may prove fruitful if given additional attention in future investigations.
 ## Seasonality
